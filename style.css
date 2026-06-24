@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E RESETS
+   1. RESETS E CONFIGURAÇÕES GERAIS
    ========================================================================== */
 * {
     margin: 0;
@@ -9,116 +9,115 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6; /* Fundo geral suave */
+    background-color: #f4f7f6; /* Cor de fundo suave para a página externa */
     color: #333333;
     line-height: 1.6;
     padding: 40px 20px;
 }
 
 /* ==========================================================================
-   2. O CONTAINER ÚNICO
+   2. O CONTAINER ÚNICO (Centralizado na tela)
    ========================================================================== */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #ffffff; /* Fundo branco para todo o glossário */
-    border-radius: 12px; /* Cantos arredondados no bloco principal */
+    max-width: 750px; /* Controla a largura máxima do portfólio */
+    margin: 0 auto; /* Centraliza na tela */
+    background-color: #ffffff; /* Fundo branco para todo o seu conteúdo */
     padding: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave ao redor do container */
-    border-top: 6px solid #0076d6; /* Detalhe azul no topo para dar acabamento */
-}
-
-/* Título principal do cabeçalho (caso tenha usado a versão refatorada) */
-header h1 {
-    font-size: 2rem;
-    color: #222222;
-    text-align: center;
-    margin-bottom: 30px;
+    border-radius: 12px; /* Bordas levemente arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra elegante ao redor */
 }
 
 /* ==========================================================================
-   3. SEÇÕES DE CONCEITOS (ANTIGOS CARDS)
+   3. CABEÇALHO (Sua foto e nome)
    ========================================================================== */
-/* Se você manteve a classe .card no HTML, ela agora age como uma seção interna */
-.card {
-    padding-bottom: 35px;
+header {
+    text-align: center;
     margin-bottom: 35px;
-    border-bottom: 1px solid #eef2f3; /* Linha sutil separando os conceitos */
+    padding-bottom: 25px;
+    border-bottom: 2px solid #eef2f3; /* Linha sutil abaixo do cabeçalho */
 }
 
-/* Remove a linha divisória e o espaçamento do último conceito */
-.card:last-of-type {
+header h1 {
+    font-size: 2.2rem;
+    color: #222222;
+    margin-bottom: 15px;
+}
+
+/* Foto de Perfil Redonda */
+.profile-img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0076d6; /* Detalhe em azul na borda da sua foto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   4. SEÇÕES DE TEXTO E IMAGENS (Biografia e Glossários)
+   ========================================================================== */
+.secao {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eef2f3; /* Divisória entre os tópicos */
+}
+
+/* Remove a linha divisória do último elemento */
+.secao:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-/* Títulos dos conceitos */
-.card h1, .card h2 {
-    font-size: 1.6rem;
-    color: #0076d6; /* Azul para destacar os termos do glossário */
+h2, h3 {
+    color: #0076d6; /* Azul moderno para os títulos principais */
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
 }
 
-/* Parágrafos */
-.card p {
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+
+p {
     margin-bottom: 15px;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    text-align: justify; /* Alinha o texto das laterais */
 }
 
-/* ==========================================================================
-   4. BLOCOS DE CÓDIGO DE EXEMPLO
-   ========================================================================== */
-.card .exemplo {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #1e1e1e; /* Estilo caixa de código escura */
-    color: #4fc1ff;
-    padding: 15px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    overflow-x: auto;
-    margin: 15px 0 20px 0;
-    border: 1px solid #333;
-}
-
-/* ==========================================================================
-   5. BOTÕES / LINKS DE DOCUMENTAÇÃO
-   ========================================================================== */
-.card a {
+/* Estilização dos Links */
+a {
     display: inline-block;
-    background-color: #0076d6;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 8px 18px;
-    border-radius: 4px;
+    color: #0076d6;
     font-weight: bold;
-    font-size: 0.85rem;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none;
+    margin-bottom: 15px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
 }
 
-.card a:hover {
-    background-color: #00569d;
+a:hover {
+    color: #00569d;
+    border-bottom: 2px solid #00569d; /* Linha aparece ao passar o mouse */
 }
 
-.card a:active {
-    transform: scale(0.98);
+/* Ajuste das imagens internas do glossário */
+.conteudo-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px auto 0 auto; /* Centraliza as fotos do glossário */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================
-   6. RESPONSIVIDADE (Telas menores/Celulares)
+   5. RESPONSIVIDADE (Para celulares)
    ========================================================================== */
 @media (max-width: 600px) {
     body {
-        padding: 20px 10px;
+        padding: 15px 10px;
     }
-    
     .container {
-        padding: 20px; /* Reduz o espaçamento interno em telas pequenas */
+        padding: 20px;
     }
-    
-    .card h1, .card h2 {
-        font-size: 1.4rem;
+    header h1 {
+        font-size: 1.7rem;
     }
 }
