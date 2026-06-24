@@ -1,79 +1,85 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E RESETS
    ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que margens e paddings não quebrem o layout */
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6; /* Fundo cinza claro azulado, confortável para leitura */
-    color: #333333; /* Texto principal em cinza escuro (alto contraste) */
-    line-height: 1.6; /* Espaçamento de linha ideal para leitura */
+    background-color: #f4f7f6; /* Fundo geral suave */
+    color: #333333;
+    line-height: 1.6;
     padding: 40px 20px;
 }
 
 /* ==========================================================================
-   2. ESTRUTURA DO LAYOUT (CONTAINER)
+   2. O CONTAINER ÚNICO
    ========================================================================== */
 .container {
-    max-width: 800px; /* Limita a largura para o texto não ficar muito espalhado */
-    margin: 0 auto; /* Centraliza o site na tela */
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* Espaçamento vertical entre os cartões de conceitos */
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Fundo branco para todo o glossário */
+    border-radius: 12px; /* Cantos arredondados no bloco principal */
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave ao redor do container */
+    border-top: 6px solid #0076d6; /* Detalhe azul no topo para dar acabamento */
+}
+
+/* Título principal do cabeçalho (caso tenha usado a versão refatorada) */
+header h1 {
+    font-size: 2rem;
+    color: #222222;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 /* ==========================================================================
-   3. CARTÕES DE CONCEITO (CARDS)
+   3. SEÇÕES DE CONCEITOS (ANTIGOS CARDS)
    ========================================================================== */
+/* Se você manteve a classe .card no HTML, ela agora age como uma seção interna */
 .card {
-    background-color: #ffffff;
-    border-radius: 8px; /* Cantos levemente arredondados */
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para dar profundidade */
-    border-left: 5px solid #0076d6; /* Detalhe azul na lateral esquerda para destaque */
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #eef2f3; /* Linha sutil separando os conceitos */
+}
+
+/* Remove a linha divisória e o espaçamento do último conceito */
+.card:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 /* Títulos dos conceitos */
-.card h1 {
-    font-size: 1.8rem;
-    color: #0076d6; /* Azul Alura/tecnologia */
+.card h1, .card h2 {
+    font-size: 1.6rem;
+    color: #0076d6; /* Azul para destacar os termos do glossário */
     margin-bottom: 15px;
-    border-bottom: 1px solid #eef2f3;
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
-/* Parágrafos de texto convencional */
+/* Parágrafos */
 .card p {
     margin-bottom: 15px;
     font-size: 1rem;
-}
-
-/* Parágrafo final antes do link (ajuste de espaçamento) */
-.card p:last-of-type {
-    margin-bottom: 20px;
 }
 
 /* ==========================================================================
    4. BLOCOS DE CÓDIGO DE EXEMPLO
    ========================================================================== */
 .card .exemplo {
-    font-family: 'Courier New', Courier, monospace; /* Fonte mono-espaçada para código */
-    background-color: #1e1e1e; /* Fundo escuro estilo editor de código (VS Code) */
-    color: #4fc1ff; /* Cor azul claro para o código se destacar */
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1e1e; /* Estilo caixa de código escura */
+    color: #4fc1ff;
     padding: 15px;
     border-radius: 6px;
     font-size: 0.95rem;
-    overflow-x: auto; /* Adiciona barra de rolagem horizontal se o código for longo */
+    overflow-x: auto;
+    margin: 15px 0 20px 0;
     border: 1px solid #333;
 }
 
@@ -84,20 +90,18 @@ body {
     display: inline-block;
     background-color: #0076d6;
     color: #ffffff;
-    text-decoration: none; /* Remove o sublinhado padrão */
-    padding: 10px 20px;
+    text-decoration: none;
+    padding: 8px 18px;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease, transform 0.1s ease; /* Transição suave no hover */
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Efeito ao passar o mouse no link */
 .card a:hover {
-    background-color: #00569d; /* Escurece o azul */
+    background-color: #00569d;
 }
 
-/* Efeito visual de clique */
 .card a:active {
     transform: scale(0.98);
 }
@@ -110,11 +114,11 @@ body {
         padding: 20px 10px;
     }
     
-    .card {
-        padding: 20px;
+    .container {
+        padding: 20px; /* Reduz o espaçamento interno em telas pequenas */
     }
     
-    .card h1 {
-        font-size: 1.5rem;
+    .card h1, .card h2 {
+        font-size: 1.4rem;
     }
 }
