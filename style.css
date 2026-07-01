@@ -55,4 +55,9 @@
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
 }
+
+a:hover {
+    color: #00569d;
+    border-bottom: 2px solid #00569d; /* Linha aparece ao passar o mouse */
+}
   
