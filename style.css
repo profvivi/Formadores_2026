@@ -22,4 +22,11 @@
     margin-top: 45px;
     margin-bottom: 15px;
  }
+
+ p{
+    font-family: Arial, Helvetica, sans-serif
+    color: #fff;
+    font-size: 25px;
+    text-align: justify;
+ }
   
